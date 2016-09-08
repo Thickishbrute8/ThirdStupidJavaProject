@@ -1,17 +1,30 @@
 package stupid.controller;
 
-public class StupidController 
+import java.util.Scanner;
+
+public class StupidController
 {
 	private static String myName;
-	
+	private Scanner inputReader;
+
 	public StupidController()
 	{
-		myName = "Phoenix";
+		myName ="Phoenix,";
+		inputReader = new Scanner(System.in);
 	}
-	
-	public static void main (String [] args)
+
+	public void start()
 	{
-		System.out.println("this programis less stupid");
+		System.out.println("This programis less stupid");
 		System.out.println(myName);
+		askQuestions();
 	}
-}
+
+
+	private void askQuestions()
+	{
+		System.out.println("how is your day?");
+		String input = inputReader.nextLine();
+		System.out.println("Oh, you said: " + input + " about your day ");
+	}
+}	
